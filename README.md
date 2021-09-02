@@ -39,7 +39,7 @@ resource "local_file" "basic_file" {
 ```
 
 AWS EC2 Instance provisioning 
-```
+```terraform
 resource "aws_instance" "backendserver"{
     ami = "ami-10101010"
     instance_type = "t2.micro"
@@ -48,7 +48,7 @@ resource "aws_instance" "backendserver"{
 
 
 AWS S3 Bucket provisioning 
-```
+```terraform
 resource "aws_s3_bucket" "doc_bucket" {
     bucket = "document_bucket_for_backend"
     acl = "private"
@@ -58,7 +58,7 @@ resource "aws_s3_bucket" "doc_bucket" {
 ## Start provisioning
 
 1. Initiate the provisioning 
-```
+```terraform
 terraform init
 ```
 
@@ -68,7 +68,7 @@ terraform init
 
 
 2. Review the plan 
-```
+```terraform
 terraform plan 
 ```
 This command will display the terraform action plan 
@@ -76,17 +76,17 @@ This command will display the terraform action plan
 
 
 3. Apply the changes 
-```
+```terraform
 terraform apply
 ```
 
 4. To show the resources
-```
+```terraform
 terraform show
 ```
 
 5. To Destroy the complete provisioning 
-```
+```terraform
 terraform destroy
 ```
 
@@ -116,7 +116,7 @@ lets make use of new provider "random"
 
 To create random details we can use random as resource type 
 
-```
+```terraform
 
 resource "random_pet" "my-employee" {
     prefix = "Mr."
@@ -130,7 +130,7 @@ resource "random_pet" "my-employee" {
 
 Variable Syntax 
 
-```
+```terraform
 variable "<variable_name>" {
     default = "<value>"
 }
